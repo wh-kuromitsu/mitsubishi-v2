@@ -1,0 +1,66 @@
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 38 92% 50%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --radius: 0.625rem;
+
+    /* custom brand */
+    --navy: 222 47% 11%;
+    --navy-2: 222 40% 15%;
+    --navy-3: 222 35% 19%;
+    --amber: 38 92% 50%;
+    --teal: 173 73% 30%;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Geist Variable', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(220 20% 85%); border-radius: 3px; }
+
+/* Screen entrance */
+.screen-enter { animation: screenIn 0.25s ease; }
+@keyframes screenIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Scan animation */
+@keyframes scanFill { from { width: 0%; } to { width: 100%; } }
+.scan-animate { animation: scanFill 2.2s ease forwards; }
+
+/* Pulse dot */
+@keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.pulse-dot { animation: pulseDot 2s infinite; }
+
+/* Table hover */
+.table-row-hover:hover { background-color: hsl(220 14% 97%); }
+
+/* Range slider */
+input[type=range] { -webkit-appearance: none; appearance: none; height: 5px; border-radius: 3px; outline: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 17px; height: 17px; border-radius: 50%; background: hsl(var(--amber)); border: 2px solid white; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
